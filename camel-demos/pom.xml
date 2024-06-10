@@ -125,10 +125,22 @@
     </dependencies>
 
     <build>
+        <finalName>camel-demos</finalName>
         <resources>
-
             <resource>
                 <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>*.xml</include>
+                    <include>*.bpm</include>
+                    <include>*.properties</include>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <directory>src/test/resources</directory>
                 <filtering>true</filtering>
                 <includes>
                     <include>**/*.xml</include>
