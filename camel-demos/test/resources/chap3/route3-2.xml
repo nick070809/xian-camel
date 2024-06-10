@@ -1,0 +1,8 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+    <route id="useBeanDataTransfer">
+        <from uri="direct:useBeanDataTransfer"/>
+        <bean beanType="org.xian.camel.dataformat.transfer.DataTransformer" method="transform(${body})"/>
+        <log message="Body : ${body}"/>
+    </route>
+</routes>

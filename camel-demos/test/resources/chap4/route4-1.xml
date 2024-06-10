@@ -1,0 +1,7 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="useHellobean">
+        <from uri="direct:useHellobean"/>
+        <bean ref="helloBean" method="hello(${body})"/>
+        <log message="Body : ${body}"/>
+    </route>
+</routes>

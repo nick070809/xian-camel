@@ -1,0 +1,17 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+<route id="beanToJson">
+        <from uri="direct:beanToJson"/>
+        <setHeader headerName="CamelRedis.Command">
+            <constant>SET</constant>
+        </setHeader>
+        <setHeader headerName="CamelRedis.Key">
+            <constant>keyOne</constant>
+        </setHeader>
+        <setHeader headerName="CamelRedis.Value">
+            <constant>value1</constant>
+        </setHeader>
+        <log message="CamelRedis.Value : ${headers.CamelRedis.Value}"/>
+        <log message="Body : ${body}"/>
+    </route>
+</routes>
